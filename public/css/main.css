@@ -1,0 +1,16 @@
+.header{
+    background:#060350
+}
+.header_innner{
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:10px;
+    padding-right:10px;
+    display:flex;
+    justify-content: space-between;
+}
+.header_center{
+    font-size:1.5rem;
+    color:#fff;
+    font-weight:600;
+}
