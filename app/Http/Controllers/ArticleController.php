@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use app\User;
 use App\Article;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\ArticleRequest;
+use auth;
 class ArticleController extends Controller
 {
     /**
@@ -24,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('create_article');
     }
 
     /**
@@ -33,9 +34,13 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request,Article $article)
     {
-        //
+        // dd($request->all());
+        $article->fill($request->all());
+        $article->user_id = Auth::id();
+        $article->save();
+        return redirect('/');     
     }
 
     /**
