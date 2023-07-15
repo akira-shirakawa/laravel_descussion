@@ -1,3 +1,27 @@
+html{
+    background:#eee;
+}
+h1 {
+    /*線の種類（二重線）太さ 色*/
+    font-size:2rem;
+    text-align: center;
+    font-weight: bolder;
+  }
+h2 {
+    /*線の種類（二重線）太さ 色*/
+    font-size:1.8rem;
+    text-align: center;
+    font-weight: bolder;
+  }
+.itemWrapper>h2{
+    font-size:1.5rem;
+    text-align: center;
+    font-weight: bolder;
+    color:#fff;
+    background:#060350;
+    padding-top:10px;
+    padding-bottom:10px;
+}
 .header{
     background:#060350
 }
@@ -13,4 +37,21 @@
     font-size:1.5rem;
     color:#fff;
     font-weight:600;
+}
+
+.item{
+    padding:7px;
+    border:1px solid #ccc;
+    display:block;
+    background:#fff;
+    display:flex;
+}
+.item:hover{
+    background:#eee;
+}
+.item_title{
+    font-size:1.2rem;
+    
+    padding:10px;
+    margin-bottom:10px;
 }

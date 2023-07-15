@@ -15,7 +15,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $article = Article::latest()->paginate(5);
+        return view('index',[ 'articles' => $article ]);
     }
 
     /**
@@ -40,7 +41,7 @@ class ArticleController extends Controller
         $article->fill($request->all());
         $article->user_id = Auth::id();
         $article->save();
-        return redirect('/');     
+        return redirect('/');       
     }
 
     /**
@@ -51,7 +52,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        
+        return view('show_article', ['article' => $article]);
+        
     }
 
     /**

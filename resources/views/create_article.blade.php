@@ -14,7 +14,7 @@
         @endauth
     </div>
     <div class="column is-half">
-        <h2 class="title">投稿</h2>
+        <h1>新規投稿</h1>
         <div class="box">
         @include('common.error') 
             <form method="post" action="{{route('articles.store')}}">
@@ -38,6 +38,7 @@
                     
                     <option value="1">ビジネスマナー</option>
                     <option value="2">冠婚葬祭</option>
+                    <option value="2">食事</option>
                     <option value="3">乗り物</option>
                     <option value="4">その他</option>
                 </select>
