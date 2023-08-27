@@ -19,8 +19,17 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        Carbon::setLocale('ja');
         $article = Article::latest()->paginate(5);
-        return view('index',[ 'articles' => $article ]);
+        $article_famous = Article::withCount('votes')->orderBy('votes_count', 'desc')->paginate(5);
+        return view('index',[ 'articles' => $article , 'articles_famous' => $article_famous]);
+    }
+    public function category($id)
+    {
+        $article = Article::where('category',$id)->latest()->paginate(5);
+        $article_famous = Article::withCount('votes')->orderBy('votes_count', 'desc')->paginate(5);
+        $name = Article::convert_category($id);
+        return view('category',[ 'articles' => $article , 'articles_famous' => $article_famous,'name' => $name]);
     }
 
     /**
@@ -48,6 +57,8 @@ class ArticleController extends Controller
         return redirect('/');       
     }
 
+   
+
     /**
      * Display the specified resource.
      *
@@ -57,8 +68,10 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         Carbon::setLocale('ja');
-        $comment = Comment::where('article_id', $article->id)->get();
-        return view('show_article', ['article' => $article, 'comments' => $comment]);
+        $comment = Comment::where('article_id', $article->id)->withCount('users')->orderBy('users_count','desc')->get();
+        $category_id = $article->category;
+        $category_ranking = Article::where('category',$category_id)->withCount('votes')->orderBy('votes_count', 'desc')->paginate(5);
+        return view('show_article', ['article' => $article, 'comments' => $comment, 'category_ranking' => $category_ranking]);
         
     }
 

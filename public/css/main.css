@@ -49,11 +49,18 @@ h2 {
 .item:hover{
     background:#eee;
 }
+.item_right{
+    padding-left:10px;
+}
 .item_title{
     font-size:1.2rem;
     
-    padding:10px;
-    margin-bottom:10px;
+    padding-top:10px;
+    
+    
+}
+.item_bottom{
+    font-size: 0.8rem;
 }
 .comment{
     display: flex;
@@ -71,4 +78,30 @@ width: 15%;
 .comment_head{
     font-size:0.8rem;
     color:#888;
+}
+
+
+.category{
+    border:2px solid #060350;
+    text-align: center;
+}
+.category_head{
+    font-size:1.2rem;
+    font-weight:600;
+    padding:10px;
+    background:#060350;
+    color:white;
+}
+.category a{
+    color:#060350;
+    font-size:1.2rem;
+    font-weight:600;
+    padding:10px;
+    display:block;
+    background:white;
+    border-bottom:2px solid #060350;
+}
+.category a:hover{
+    background:#060350;
+    color:white;
 }
