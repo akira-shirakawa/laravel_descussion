@@ -8,6 +8,8 @@ use App\Http\Requests\ArticleRequest;
 use auth;
 use Log;
 use Illuminate\Support\Facades\DB;
+use App\Comment;
+use Carbon\Carbon;
 class ArticleController extends Controller
 {
     /**
@@ -39,7 +41,7 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request,Article $article)
     {
-        // dd($request->all());
+        
         $article->fill($request->all());
         $article->user_id = Auth::id();
         $article->save();
@@ -54,8 +56,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        
-        return view('show_article', ['article' => $article]);
+        Carbon::setLocale('ja');
+        $comment = Comment::where('article_id', $article->id)->get();
+        return view('show_article', ['article' => $article, 'comments' => $comment]);
         
     }
 

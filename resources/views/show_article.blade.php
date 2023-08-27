@@ -34,12 +34,43 @@
         :article_id = '@json($article->id)'
         :authorized='@json(Auth::check())'>
         </vote>
+        <h2>コメント</h2>
+        <form action="{{route('comments.store')}}" method="post">
+            @csrf
+            <textarea class="textarea" name="comment" placeholder="素敵なコメントを書く"></textarea>
+            <input type="hidden" name="article_id" value="{{$article->id}}">
+            <input type="hidden" name="user_id" value="{{Auth::id()}}">
+            <input type="submit" class="button is-link is-fullwidth mt-2" value="コメントする">
+        </form>
         
+        @foreach($comments as $comment)
+            <div class="comment">
+            <div class="comment_left">
+                <img src="{{asset($comment->get_user_image($comment->user->age,$comment->user->sex))}}" alt="" width="90%">
+            </div>
+            <div class="comment_right">
+                <div class="comment_head">{{$comment->convert_age($comment->user->age)}}{{$comment->convert_sex($comment->user->sex)}} | {{$comment->created_at->diffForHumans()}}</div>
+                <div class="comment_body">{{$comment->comment}}</div>
+                <div class="comment_bottom">
+                    <like
+                    :authorized='@json(Auth::check())'
+                    :get_like='@json($comment->get_like())'
+                    :is_liked='@json($comment->is_liked())'
+                    :comment_id='@json($comment->id)'
+                    
+                    endpoint="{{route('like')}}">
+                </like>
+                </div>
+            </div>
+        </div>
+        @endforeach
        
-    
+       
+     
     </div>
     <div class="column"></div>
 </div>
+
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>

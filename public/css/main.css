@@ -55,3 +55,20 @@ h2 {
     padding:10px;
     margin-bottom:10px;
 }
+.comment{
+    display: flex;
+    padding:10px;
+    border:1px solid #ccc;
+    background-color: #fff;
+}
+.comment_left{
+width: 15%;
+
+}
+.comment_right{
+    width: 85%;
+}
+.comment_head{
+    font-size:0.8rem;
+    color:#888;
+}
