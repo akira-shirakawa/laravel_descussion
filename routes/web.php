@@ -14,3 +14,6 @@ Auth::routes();
 Route::get('/','ArticleController@index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth'); 
 Route::resource('/articles', 'ArticleController')->only(['show']); 
+Route::post('/vote','ArticleController@vote')->name('vote')->middleware('auth');
+Route::get('/vote/{article}','ArticleController@getVote')->name('getVote');
+Route::get('/hasMyVote/{article}','ArticleController@hasMyVote')->name('hasMyVote');

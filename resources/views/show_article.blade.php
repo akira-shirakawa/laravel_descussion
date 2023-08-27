@@ -7,7 +7,7 @@
 </head>
 <body>
 @include('layouts.header')
-<div class="columns">
+<div class="columns" id="app">
     <div class="column">
         @auth
         hoge
@@ -25,8 +25,21 @@
         <div class="box">
             {{$article->detail}}
         </div>
+        
+        <vote
+        endpoint = "{{ route('vote') }}"
+        endpoint_has_my_vote = "{{ route('hasMyVote',['article'=>$article]) }}"
+        endpoint_get_vote = "{{ route('getVote',['article'=>$article]) }}"
+        :user = '@json(Auth::user())'
+        :article_id = '@json($article->id)'
+        :authorized='@json(Auth::check())'>
+        </vote>
+        
+       
+    
     </div>
     <div class="column"></div>
 </div>
+<script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
