@@ -2218,7 +2218,11 @@ var staticRenderFns = [function () {
     staticClass: "modal-content"
   }, [_c("div", {
     staticClass: "box"
-  }, [_vm._v("hogehuga")])]);
+  }, [_c("h2", [_vm._v("いいねをするには"), _c("a", {
+    attrs: {
+      href: "/register"
+    }
+  }, [_vm._v("ログイン")]), _vm._v("が必要です。")])])]);
 }];
 render._withStripped = true;
 
@@ -2241,7 +2245,7 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", {
     staticClass: "main"
-  }, [_c("div", {
+  }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "show"
   }, [_c("div", {
     staticClass: "left"
@@ -2319,7 +2323,7 @@ var render = function render() {
     on: {
       click: _vm.close
     }
-  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("button", {
+  }), _vm._v(" "), _vm._m(1), _vm._v(" "), _c("button", {
     staticClass: "modal-close is-large",
     attrs: {
       "aria-label": "close"
@@ -2332,11 +2336,21 @@ var render = function render() {
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
+  return _c("p", [_c("span", {
+    staticClass: "color"
+  }, [_vm._v("■")]), _vm._v("賛成  ()は総数")]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c;
   return _c("div", {
     staticClass: "modal-content"
   }, [_c("div", {
     staticClass: "box"
-  }, [_vm._v("hogehuga")])]);
+  }, [_c("h2", [_vm._v("投票には"), _c("a", {
+    attrs: {
+      href: "/register"
+    }
+  }, [_vm._v("ログイン")]), _vm._v("が必要です。")])])]);
 }];
 render._withStripped = true;
 
@@ -2374,7 +2388,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.sex[data-v-40e744d5]{\n    display:flex;\n    justify-content:space-between;\n}\n.age[data-v-40e744d5]{\n    display:flex;\n    justify-content:space-between;\n}\nh2[data-v-40e744d5]{\n    font-size:1.4rem;\n}\nh3[data-v-40e744d5]{\n    font-size:1.2rem;\n    font-weight: bold;\n}\n.show[data-v-40e744d5] {\n    display: flex;\n}\n.left[data-v-40e744d5],.right[data-v-40e744d5]{\n    width:50%;\n}\n.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.young>.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.middle>.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.old>.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.left>.pie[data-v-40e744d5]{\n    width:200px;\n    height:200px;\n}\n.sex .pie[data-v-40e744d5]{\n    width:100px;\n    height:100px;\n}\n.age .pie[data-v-40e744d5]{\n    width:70px;\n    height:70px;\n}\n.age .pie span[data-v-40e744d5]{\n    font-size:1rem;\n    right:10px;\n}\n.sex .pie span[data-v-40e744d5]{\n    font-size:1rem;\n    right:10px;\n}\n.pie span[data-v-40e744d5] {\n\tposition: absolute;\n\ttop: 50%;\n\tright: 50px;\n\ttransform: translateY(-50%);\n\tcolor: #fff;\n\tfont-size: 26px;\n\tfont-weight: 700;\n}\n.vote[data-v-40e744d5]{\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, "\n.sex[data-v-40e744d5]{\n    display:flex;\n    justify-content:space-between;\n}\n.age[data-v-40e744d5]{\n    display:flex;\n    justify-content:space-between;\n}\nh2[data-v-40e744d5]{\n    font-size:1.4rem;\n}\nh3[data-v-40e744d5]{\n    font-size:1.2rem;\n    font-weight: bold;\n}\n.show[data-v-40e744d5] {\n    display: flex;\n}\n.left[data-v-40e744d5],.right[data-v-40e744d5]{\n    width:50%;\n}\n.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.young>.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.middle>.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.old>.pie[data-v-40e744d5] {\n\tposition: relative;\n\tmargin-right: auto;\n\tmargin-left: auto;\n\t\n\tbackground-image: conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%);\n\tborder-radius: 50%;\n}\n.left>.pie[data-v-40e744d5]{\n    width:200px;\n    height:200px;\n}\n.sex .pie[data-v-40e744d5]{\n    width:100px;\n    height:100px;\n}\n.age .pie[data-v-40e744d5]{\n    width:70px;\n    height:70px;\n}\n.age .pie span[data-v-40e744d5]{\n    font-size:0.8rem;\n    right:5px;\n}\n.sex .pie span[data-v-40e744d5]{\n    font-size:1rem;\n    right:10px;\n}\n.pie span[data-v-40e744d5] {\n\tposition: absolute;\n\ttop: 50%;\n\tright: 50px;\n\ttransform: translateY(-50%);\n\tcolor: #fff;\n\tfont-size: 26px;\n\tfont-weight: 700;\n}\n.vote[data-v-40e744d5]{\n    text-align: center;\n}\n.color[data-v-40e744d5]{\n    color:#d5525f;\n}\n", ""]);
 
 // exports
 

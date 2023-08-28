@@ -16,7 +16,7 @@
     <div class="column is-half">
         <h2>題名</h2>
         <div class="articleTitle">
-            <div class="articleTitle_head">{{$article->title}}</div>
+            <div class="articleTitle_head box"><h2>{{$article->title}}<h2></div>
             <div class="articleTitle_bottom">
 
             </div>
@@ -35,6 +35,7 @@
         :authorized='@json(Auth::check())'>
         </vote>
         <h2>コメント</h2>
+        @auth
         <form action="{{route('comments.store')}}" method="post">
             @csrf
             <textarea class="textarea" name="comment" placeholder="素敵なコメントを書く"></textarea>
@@ -42,7 +43,10 @@
             <input type="hidden" name="user_id" value="{{Auth::id()}}">
             <input type="submit" class="button is-link is-fullwidth mt-2" value="コメントする">
         </form>
-        
+        @endauth
+        @guest
+        <div class="un_login_box">コメントをするには<a href="{{ route('register') }}">ログイン</a>してください</div>
+        @endguest
         @foreach($comments as $comment)
             <div class="comment">
             <div class="comment_left">
@@ -67,7 +71,7 @@
        
         <div class="itemWrapper">
         <h2 class="Wrapperhead">
-            カテゴリーランキング
+            関連
         </h2>
         @foreach($category_ranking as $article)
         <a class="item" href="{{route('articles.show',['article'=>$article])}}">

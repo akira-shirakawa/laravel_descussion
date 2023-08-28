@@ -21,3 +21,4 @@ Route::get('/vote/{article}','ArticleController@getVote')->name('getVote');
 Route::get('/hasMyVote/{article}','ArticleController@hasMyVote')->name('hasMyVote');
 Route::post('/like','CommentController@like')->name('like')->middleware('auth');
 Route::get('/category/{id}','ArticleController@category')->name('category');
+Route::get('/user/{user}','ArticleController@user')->middleware('auth')->name('user');

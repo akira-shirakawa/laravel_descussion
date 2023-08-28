@@ -2,22 +2,26 @@
 <html lang="ja">
 <head>
     @include('common.head')
-    <title>Document</title>
+    <title>マナーsalon</title>
 
 </head>
 <body>
 @include('layouts.header')
+<div class="bl_jumbotron" style="background-image: url({{asset('hero.jpeg')}});">
+    <div class="bl_jumbotron_inner">
+        <p class="bl_jumbotron_ttl">
+        みんなで
+        <br class="lg_only">
+        マナーについて話し合う
+        </p>
+    </div>
+</div>
 <div class="columns">
     <div class="column">
         
     </div>
     <div class="column is-half">
-        @auth
-        <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit">ログアウト</button>
-        </form>
-        @endauth
+    
     <div class="itemWrapper">
         <h2 class="Wrapperhead">
             新着
@@ -63,6 +67,11 @@
                     <a href="{{ route('category', ['id' => 4]) }}">その他</a>
             </div>
         </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer_inner">
+        akira's portfolio
     </div>
 </div>
 </body>

@@ -1,6 +1,8 @@
 <template>
     <div class="main">
+        <p><span class="color">■</span>賛成  ()は総数</p>
         <div class="show">
+            
             <div class="left">
                 <h2>結果</h2>
                 <div class="pie" v-bind:style="{ backgroundImage: this.data_label_css[0]}"><span>{{this.data_label[0]}}</span></div>
@@ -39,7 +41,10 @@
         <div class="modal" :class="{'is-active':this.modal}">
             <div class="modal-background" @click="close"></div>
             <div class="modal-content">
-                <div class="box">hogehuga</div>
+                <div class="box">
+                    <h2>投票には<a href="/register">ログイン</a>が必要です。</h2>
+                   
+                </div>
             </div>
             <button class="modal-close is-large" aria-label="close" @click="close"></button>
         </div>
@@ -267,8 +272,8 @@ h3{
     height:70px;
 }
 .age .pie span{
-    font-size:1rem;
-    right:10px;
+    font-size:0.8rem;
+    right:5px;
 }
 .sex .pie span{
     font-size:1rem;
@@ -285,5 +290,8 @@ h3{
 }
 .vote{
     text-align: center;
+}
+.color{
+    color:#d5525f;
 }
 </style>

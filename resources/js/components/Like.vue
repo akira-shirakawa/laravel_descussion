@@ -6,7 +6,7 @@
     <div class="modal" :class="{'is-active':this.modal}">
             <div class="modal-background" @click="close"></div>
             <div class="modal-content">
-                <div class="box">hogehuga</div>
+                <div class="box"><h2>いいねをするには<a href="/register">ログイン</a>が必要です。</h2></div>
             </div>
             <button class="modal-close is-large" aria-label="close" @click="close"></button>
     </div>

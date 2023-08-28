@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     @include('common.head')
-    <title>新規登録</title>
+    <title>ログイン</title>
 
 </head>
 <body>
@@ -11,6 +11,7 @@
     <div class="column"></div>
     <div class="column is-half">
     <div class="box">
+        <h2>ログイン</h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
            
@@ -37,6 +38,7 @@
             <button class="button is-link is-fullwidth mt-2">登録</button>
                 
         </form>
+        <a href="{{ route('register') }}" class="">新規登録</a>はこちら
     </div>
     </div>
     <div class="column"></div>

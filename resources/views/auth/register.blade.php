@@ -11,6 +11,7 @@
     <div class="column"></div>
     <div class="column is-half">
     <div class="box">
+        <h2>新規登録</h2>
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="field">
@@ -67,6 +68,7 @@
             <button class="button is-link is-fullwidth mt-2">登録</button>
                 
         </form>
+        <a href="{{ route('login') }}" class="">ログイン</a>はこちら
     </div>
     </div>
     <div class="column"></div>

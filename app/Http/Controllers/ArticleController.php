@@ -32,6 +32,12 @@ class ArticleController extends Controller
         return view('category',[ 'articles' => $article , 'articles_famous' => $article_famous,'name' => $name]);
     }
 
+    public function user(User $user){
+        $article = Article::where('user_id',$user->id)->latest()->paginate(5);
+        
+        return view('user',[ 'articles' => $article ,'user' => $user]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

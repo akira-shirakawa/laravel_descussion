@@ -38,9 +38,9 @@
                     
                     <option value="1">ビジネスマナー</option>
                     <option value="2">冠婚葬祭</option>
-                    <option value="2">食事</option>
-                    <option value="3">乗り物</option>
-                    <option value="4">その他</option>
+                    <option value="3">食事</option>
+                    <option value="4">乗り物</option>
+                    <option value="5">その他</option>
                 </select>
                 </div>
                 <button class="button is-link is-fullwidth mt-2">投稿</button>
