@@ -22,7 +22,7 @@
     </div>
     <div class="column is-half">
     
-    <div class="itemWrapper">
+    <div class="itemWrapper mt-20 mb-20">
         <h2 class="Wrapperhead">
             新着
         </h2>
@@ -38,8 +38,9 @@
             </div>
         </a>
         @endforeach
+        {{$articles->links()}}
     </div>
-    <div class="itemWrapper">
+    <div class="itemWrapper mt-20 mb-20">
         <h2 class="Wrapperhead">
             投票数ランキング
         </h2>
@@ -55,10 +56,11 @@
             </div>
         </a>
         @endforeach
+        {{$articles_famous->links()}}
     </div>
     </div>
     <div class="column">
-        <div class="category">
+        <div class="category mt-20">
             <div class="category_head">カテゴリー</div>
                     <a href="{{ route('category', ['id' => 1]) }}">ビジネスマナー</a>
                     <a href="{{ route('category', ['id' => 2]) }}">冠婚葬祭</a>
@@ -74,5 +76,6 @@
         akira's portfolio
     </div>
 </div>
+
 </body>
 </html>

@@ -9,9 +9,6 @@
 @include('layouts.header')
 <div class="columns" id="app">
     <div class="column">
-        @auth
-        hoge
-        @endauth
     </div>
     <div class="column is-half">
         <h2>題名</h2>
@@ -68,8 +65,8 @@
             </div>
         </div>
         @endforeach
-       
-        <div class="itemWrapper">
+       {{$comments->links()}}
+        <div class="itemWrapper mt-20">
         <h2 class="Wrapperhead">
             関連
         </h2>

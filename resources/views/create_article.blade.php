@@ -9,9 +9,6 @@
 @include('layouts.header')
 <div class="columns">
     <div class="column">
-        @auth
-        hoge
-        @endauth
     </div>
     <div class="column is-half">
         <h1>新規投稿</h1>

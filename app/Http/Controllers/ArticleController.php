@@ -20,20 +20,22 @@ class ArticleController extends Controller
     public function index()
     {
         Carbon::setLocale('ja');
-        $article = Article::latest()->paginate(5);
-        $article_famous = Article::withCount('votes')->orderBy('votes_count', 'desc')->paginate(5);
+        $article = Article::latest()->simplePaginate(5);
+        $article_famous = Article::withCount('votes')->orderBy('votes_count', 'desc')->simplePaginate(5);
         return view('index',[ 'articles' => $article , 'articles_famous' => $article_famous]);
     }
     public function category($id)
     {
-        $article = Article::where('category',$id)->latest()->paginate(5);
-        $article_famous = Article::withCount('votes')->orderBy('votes_count', 'desc')->paginate(5);
+        Carbon::setLocale('ja');
+        $article = Article::where('category',$id)->latest()->simplePaginate(5);
+        $article_famous = Article::withCount('votes')->orderBy('votes_count', 'desc')->simplePaginate(5);
         $name = Article::convert_category($id);
         return view('category',[ 'articles' => $article , 'articles_famous' => $article_famous,'name' => $name]);
     }
 
     public function user(User $user){
-        $article = Article::where('user_id',$user->id)->latest()->paginate(5);
+        Carbon::setLocale('ja');
+        $article = Article::where('user_id',$user->id)->latest()->simplePaginate(5);
         
         return view('user',[ 'articles' => $article ,'user' => $user]);
     }
@@ -74,7 +76,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         Carbon::setLocale('ja');
-        $comment = Comment::where('article_id', $article->id)->withCount('users')->orderBy('users_count','desc')->get();
+        $comment = Comment::where('article_id', $article->id)->withCount('users')->orderBy('users_count','desc')->simplePaginate(5);
         $category_id = $article->category;
         $category_ranking = Article::where('category',$category_id)->withCount('votes')->orderBy('votes_count', 'desc')->paginate(5);
         return view('show_article', ['article' => $article, 'comments' => $comment, 'category_ranking' => $category_ranking]);
@@ -112,14 +114,15 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $article_id = $article->id;
+        $article->delete();
+        return back();
     }
 
     public function vote(Request $request)
     {
         
-        $article = Article::find($request->article_id);
-        Log::debug($request->user_id);        
+        $article = Article::find($request->article_id);        
         $article->votes()->attach($request->user_id, ['vote'=> $request->vote, 'user_attribute'=>$request->user_attribute]);
         return;
     }

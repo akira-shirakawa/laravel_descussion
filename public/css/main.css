@@ -191,3 +191,13 @@ width: 15%;
     margin-right: auto;
     margin-left: auto;
 }
+
+.mt-10{
+    margin-top:10px;
+}
+.mt-20{
+    margin-top:20px;
+}
+.mb-20{
+    margin-bottom:20px;
+}

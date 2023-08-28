@@ -12,13 +12,7 @@
         
     </div>
     <div class="column is-half">
-        @auth
-        <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit">ログアウト</button>
-        </form>
-        @endauth
-    <div class="itemWrapper">
+    <div class="itemWrapper mt-20">
         <h2 class="Wrapperhead">
             {{$name}}
         </h2>
@@ -38,7 +32,7 @@
     
     </div>
     <div class="column">
-    <div class="category">
+    <div class="category mt-20">
             <div class="category_head">カテゴリー</div>
                     <a href="{{ route('category', ['id' => 1]) }}">ビジネスマナー</a>
                     <a href="{{ route('category', ['id' => 2]) }}">冠婚葬祭</a>
