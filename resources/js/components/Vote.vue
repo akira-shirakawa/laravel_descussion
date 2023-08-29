@@ -138,7 +138,8 @@ export default{
             }else{
                 
                 this.votes();
-                this.get_vote();
+                this.map_user_attribute_for(this.user_attribute);
+                this.set_label(this.data_amount,this.data_for);
             }
         },
         vote_against(){
@@ -147,7 +148,8 @@ export default{
             }else{
                 this.vote = 0;
                 this.votes();
-                this.get_vote();
+                this.map_user_attribute_against(this.user_attribute);
+                this.set_label(this.data_amount,this.data_for);
             }
         },
         close(){
@@ -170,12 +172,109 @@ export default{
             console.log(promiseResult.data);
             this.data_amount = promiseResult.data[0];
             this.data_for = promiseResult.data[1];
-            this.data_label = promiseResult.data[2];
-            this.data_label_css = promiseResult.data[3];
 
-            
+            this.set_label(this.data_amount,this.data_for);         
+        },
+        set_label(data_amount,data_for){
+            let data_label = [];
+            let data_label_css = [];
+
+            for(let i = 0; i < 6; i++){
+
+                if(data_amount[i] == 0){
+                    
+                    data_label_css.push("conic-gradient(#d5525b 0% 0%, #f5f5f5 0% 100%)");
+                    data_label.push('データなし');
+                }else{
+                    const num = Math.round((data_for[i]/data_amount[i])*100);
+                    data_label_css.push(`conic-gradient(#d5525b 0% ${num}%, #f5f5f5 0% ${num}%)`);
+                    data_label.push(num+"%"+"("+this.data_amount[i]+")")
+                }
+                
+            }
+            this.data_label_css = data_label_css;
+            this.data_label = data_label;
+        },
+        map_user_attribute_for(user_attribute){
+            if(user_attribute == 1)
+            {
+                this.data_amount[0] += 1;
+                this.data_amount[1] += 1;
+                this.data_amount[3] += 1;
+                this.data_for[0] += 1;
+                this.data_for[1] += 1;
+                this.data_for[3] += 1;
+            }else if(user_attribute == 2){
+                this.data_amount[0] += 1;
+                this.data_amount[2] += 1;
+                this.data_amount[3] += 1;
+                this.data_for[0] += 1;
+                this.data_for[2] += 1;
+                this.data_for[3] += 1;
+            }else if(user_attribute == 3){
+                this.data_amount[0] += 1;
+                this.data_amount[1] += 1;
+                this.data_amount[4] += 1;
+                this.data_for[0] += 1;
+                this.data_for[1] += 1;
+                this.data_for[4] += 1;
+            }else if(user_attribute == 4){
+                this.data_amount[0] += 1;
+                this.data_amount[2] += 1;
+                this.data_amount[4] += 1;
+                this.data_for[0] += 1;
+                this.data_for[2] += 1;
+                this.data_for[4] += 1;
+            }else if(user_attribute == 5){
+                this.data_amount[0] += 1;
+                this.data_amount[1] += 1;
+                this.data_amount[5] += 1;
+                this.data_for[0] += 1;
+                this.data_for[1] += 1;
+                this.data_for[5] += 1;
+            }else if(user_attribute == 6){
+                this.data_amount[0] += 1;
+                this.data_amount[2] += 1;
+                this.data_amount[5] += 1;
+                this.data_for[0] += 1;
+                this.data_for[2] += 1;
+                this.data_for[5] += 1;
+            }
             
         },
+        map_user_attribute_against(user_attribute){
+            if(user_attribute == 1)
+            {
+                this.data_amount[0] += 1;
+                this.data_amount[1] += 1;
+                this.data_amount[3] += 1;
+
+            }else if(user_attribute == 2){
+                this.data_amount[0] += 1;
+                this.data_amount[2] += 1;
+                this.data_amount[3] += 1;
+                
+            }else if(user_attribute == 3){
+                this.data_amount[0] += 1;
+                this.data_amount[1] += 1;
+                this.data_amount[4] += 1;
+            }else if(user_attribute == 4){
+                this.data_amount[0] += 1;
+                this.data_amount[2] += 1;
+                this.data_amount[4] += 1;
+            }else if(user_attribute == 5){
+                this.data_amount[0] += 1;
+                this.data_amount[1] += 1;
+                this.data_amount[5] += 1;
+            }else if(user_attribute == 6){
+                this.data_amount[0] += 1;
+                this.data_amount[2] += 1;
+                this.data_amount[5] += 1;
+                
+            }
+            
+        }
+            ,
         async has_my_vote(){
             const res = await axios.get(this.endpoint_has_my_vote);
             const promiseResult = await res;

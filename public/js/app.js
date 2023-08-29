@@ -2072,7 +2072,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         this.modal = true;
       } else {
         this.votes();
-        this.get_vote();
+        this.map_user_attribute_for(this.user_attribute);
+        this.set_label(this.data_amount, this.data_for);
       }
     },
     vote_against: function vote_against() {
@@ -2081,7 +2082,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       } else {
         this.vote = 0;
         this.votes();
-        this.get_vote();
+        this.map_user_attribute_against(this.user_attribute);
+        this.set_label(this.data_amount, this.data_for);
       }
     },
     close: function close() {
@@ -2130,14 +2132,101 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               console.log(promiseResult.data);
               _this2.data_amount = promiseResult.data[0];
               _this2.data_for = promiseResult.data[1];
-              _this2.data_label = promiseResult.data[2];
-              _this2.data_label_css = promiseResult.data[3];
-            case 11:
+              _this2.set_label(_this2.data_amount, _this2.data_for);
+            case 10:
             case "end":
               return _context2.stop();
           }
         }, _callee2);
       }))();
+    },
+    set_label: function set_label(data_amount, data_for) {
+      var data_label = [];
+      var data_label_css = [];
+      for (var i = 0; i < 6; i++) {
+        if (data_amount[i] == 0) {
+          data_label_css.push("conic-gradient(#d5525b 0% 0%, #f5f5f5 0% 100%)");
+          data_label.push('データなし');
+        } else {
+          var num = Math.round(data_for[i] / data_amount[i] * 100);
+          data_label_css.push("conic-gradient(#d5525b 0% ".concat(num, "%, #f5f5f5 0% ").concat(num, "%)"));
+          data_label.push(num + "%" + "(" + this.data_amount[i] + ")");
+        }
+      }
+      this.data_label_css = data_label_css;
+      this.data_label = data_label;
+    },
+    map_user_attribute_for: function map_user_attribute_for(user_attribute) {
+      if (user_attribute == 1) {
+        this.data_amount[0] += 1;
+        this.data_amount[1] += 1;
+        this.data_amount[3] += 1;
+        this.data_for[0] += 1;
+        this.data_for[1] += 1;
+        this.data_for[3] += 1;
+      } else if (user_attribute == 2) {
+        this.data_amount[0] += 1;
+        this.data_amount[2] += 1;
+        this.data_amount[3] += 1;
+        this.data_for[0] += 1;
+        this.data_for[2] += 1;
+        this.data_for[3] += 1;
+      } else if (user_attribute == 3) {
+        this.data_amount[0] += 1;
+        this.data_amount[1] += 1;
+        this.data_amount[4] += 1;
+        this.data_for[0] += 1;
+        this.data_for[1] += 1;
+        this.data_for[4] += 1;
+      } else if (user_attribute == 4) {
+        this.data_amount[0] += 1;
+        this.data_amount[2] += 1;
+        this.data_amount[4] += 1;
+        this.data_for[0] += 1;
+        this.data_for[2] += 1;
+        this.data_for[4] += 1;
+      } else if (user_attribute == 5) {
+        this.data_amount[0] += 1;
+        this.data_amount[1] += 1;
+        this.data_amount[5] += 1;
+        this.data_for[0] += 1;
+        this.data_for[1] += 1;
+        this.data_for[5] += 1;
+      } else if (user_attribute == 6) {
+        this.data_amount[0] += 1;
+        this.data_amount[2] += 1;
+        this.data_amount[5] += 1;
+        this.data_for[0] += 1;
+        this.data_for[2] += 1;
+        this.data_for[5] += 1;
+      }
+    },
+    map_user_attribute_against: function map_user_attribute_against(user_attribute) {
+      if (user_attribute == 1) {
+        this.data_amount[0] += 1;
+        this.data_amount[1] += 1;
+        this.data_amount[3] += 1;
+      } else if (user_attribute == 2) {
+        this.data_amount[0] += 1;
+        this.data_amount[2] += 1;
+        this.data_amount[3] += 1;
+      } else if (user_attribute == 3) {
+        this.data_amount[0] += 1;
+        this.data_amount[1] += 1;
+        this.data_amount[4] += 1;
+      } else if (user_attribute == 4) {
+        this.data_amount[0] += 1;
+        this.data_amount[2] += 1;
+        this.data_amount[4] += 1;
+      } else if (user_attribute == 5) {
+        this.data_amount[0] += 1;
+        this.data_amount[1] += 1;
+        this.data_amount[5] += 1;
+      } else if (user_attribute == 6) {
+        this.data_amount[0] += 1;
+        this.data_amount[2] += 1;
+        this.data_amount[5] += 1;
+      }
     },
     has_my_vote: function has_my_vote() {
       var _this3 = this;

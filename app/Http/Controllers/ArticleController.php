@@ -186,18 +186,7 @@ class ArticleController extends Controller
         
         $label = [];
         $label_css = [];
-        for($i=0;$i<6;$i++){
-            if($amount[$i] == 0){
-                $label_css[$i] = "conic-gradient(#d5525f 0% 0%, #d9d9d9 0% 100%)";
-                $label[$i] = 'データなし';
-            
-            }else{
-                $num = round($amount_for[$i]/$amount[$i]*100,1);
-                $label_css[$i] = "conic-gradient(#d5525f 0% $num%, #d9d9d9 $num% 100%)";
-                $label[$i] = round($amount_for[$i]/$amount[$i]*100,1).'%('.$amount[$i].')';
-            }
-        }
-        $result = [array_sum($amount),array_sum($amount_for),$label,$label_css];
+        $result = [$amount,$amount_for];
         Log::debug($result);
         
         return $result;
