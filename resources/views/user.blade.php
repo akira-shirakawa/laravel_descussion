@@ -46,7 +46,15 @@
                 
                     <img src="{{asset('category_images/category_'.$article->category.'.png')}}" alt="" width="60px" height="60px">
                 </div>
+                <div class="item_right">
+                <div class="item_title">{{$article->title}}</div>
                 
+                <form action="{{route('articles.destroy',['article'=>$article])}}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-danger">削除</button>
+                </div>
+                </div>
             </a>
             @endforeach
         </div>
