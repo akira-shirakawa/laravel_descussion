@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Comment;
 class Article extends Model
 {
     protected $fillable = [
