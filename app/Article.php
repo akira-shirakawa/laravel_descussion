@@ -17,7 +17,7 @@ class Article extends Model
     }
     public function comments()
     {
-        return $this->hasMany('App\Comment');
+        return $this->hasMany(Comment::class);
     }
 
     public static function convert_category($id)
