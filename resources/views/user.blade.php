@@ -48,7 +48,7 @@
                 </div>
                 <div class="item_right">
                 <div class="item_title">{{$article->title}}</div>
-                <div class="item_bottom">{{$article->created_at->diffForHumans()}} &emsp;<i class="fa-regular fa-comment"></i>{{$article->comments->count()}} &emsp;投票数:{{$article->votes()->count()}}&emsp;
+                <div class="item_bottom">{{$article->created_at->diffForHumans()}} &emsp;<i class="fa-regular fa-comment"></i>{{$article->comments()->count()}} &emsp;投票数:{{$article->votes()->count()}}&emsp;
                 <form action="{{route('articles.destroy',['article'=>$article])}}" method="post">
                     @csrf
                     @method('delete')
