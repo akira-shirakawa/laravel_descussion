@@ -42,10 +42,10 @@
             </h2>
             @foreach($articles as $article)
             <a class="item" href="{{route('articles.show',['article'=>$article])}}">
-                <div class="item_left">
+                <!-- <div class="item_left">
                 
                     <img src="{{asset('category_images/category_'.$article->category.'.png')}}" alt="" width="60px" height="60px">
-                </div>
+                </div> -->
                 <!-- <div class="item_right">
                 <div class="item_title">{{$article->title}}</div>
                 <div class="item_bottom">{{$article->created_at->diffForHumans()}} &emsp;<i class="fa-regular fa-comment"></i>{{$article->comments->count()}} &emsp;投票数:{{$article->votes()->count()}}&emsp;
