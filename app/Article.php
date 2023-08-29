@@ -13,7 +13,7 @@ class Article extends Model
 
     public function votes()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(User::class);
     }
     public function comments()
     {
