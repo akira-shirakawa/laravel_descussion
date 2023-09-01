@@ -25,7 +25,7 @@
                 <div class="field">
                     <label class="label">詳細</label>
                     <div class="control">
-                        <textarea class="textarea" placeholder="本文" name="detail" required></textarea>
+                        <textarea class="textarea" placeholder="本文" name="detail"></textarea>
                     </div>
                 </div>
                 カテゴリー

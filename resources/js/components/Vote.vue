@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <p><span class="color">■</span>賛成  ()は総数</p>
+        <p><span class="color">■</span>必要  ()総数</p>
         <div class="show">
             
             <div class="left">
@@ -383,7 +383,7 @@ h3{
 	top: 50%;
 	right: 50px;
 	transform: translateY(-50%);
-	color: #fff;
+	color: #060350;
 	font-size: 26px;
 	font-weight: 700;
 }

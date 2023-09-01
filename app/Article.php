@@ -18,6 +18,14 @@ class Article extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    public function restrict_word($word)
+    {
+        if(mb_strlen($word) > 18){
+            return mb_substr($word,0,18).'...';
+        }else{
+            return $word;
+        }
+    }
 
     public static function convert_category($id)
     {

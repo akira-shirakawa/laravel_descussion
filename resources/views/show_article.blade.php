@@ -18,11 +18,13 @@
 
             </div>
         </div>
+        @if($article->detail != null)
         <h2>詳細</h2>
+        
         <div class="box">
             {{$article->detail}}
         </div>
-        
+        @endif
         <vote
         endpoint = "{{ route('vote') }}"
         endpoint_has_my_vote = "{{ route('hasMyVote',['article'=>$article]) }}"
@@ -50,8 +52,8 @@
                 <img src="{{asset($comment->get_user_image($comment->user->age,$comment->user->sex))}}" alt="" width="90%">
             </div>
             <div class="comment_right">
-                <div class="comment_head">{{$comment->convert_age($comment->user->age)}}{{$comment->convert_sex($comment->user->sex)}} | {{$comment->created_at->diffForHumans()}}</div>
-                <div class="comment_body">{{$comment->comment}}</div>
+                <div class="comment_head">{{$comment->user->name}} | {{$comment->convert_age($comment->user->age)}}{{$comment->convert_sex($comment->user->sex)}} | {{$comment->created_at->diffForHumans()}}</div>
+                <div class="comment_body">{!! nl2br(e($comment->comment)) !!}</div>
                 <div class="comment_bottom">
                     <like
                     :authorized='@json(Auth::check())'
@@ -77,7 +79,7 @@
                 <img src="{{asset('category_images/category_'.$article->category.'.png')}}" alt="" width="60px" height="60px">
             </div>
             <div class="item_right">
-            <div class="item_title">{{$article->title}}</div>
+            <div class="item_title">{{$article->restrict_word($article->title)}}</div>
             <div class="item_bottom">{{$article->created_at->diffForHumans()}} &emsp;<i class="fa-regular fa-comment"></i>{{$article->comments->count()}} &emsp;投票数:{{$article->votes()->count()}}</div>
             </div>
         </a>
