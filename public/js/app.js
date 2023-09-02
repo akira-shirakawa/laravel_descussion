@@ -2427,7 +2427,7 @@ var staticRenderFns = [function () {
     _c = _vm._self._c;
   return _c("p", [_c("span", {
     staticClass: "color"
-  }, [_vm._v("■")]), _vm._v("必要  ()総数")]);
+  }, [_vm._v("■")]), _vm._v("必要  ()投票数")]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;

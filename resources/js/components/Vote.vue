@@ -1,6 +1,6 @@
 <template>
     <div class="main">
-        <p><span class="color">■</span>必要  ()総数</p>
+        <p><span class="color">■</span>必要  ()投票数</p>
         <div class="show">
             
             <div class="left">
