@@ -14,9 +14,14 @@
 <li>投稿一覧　自分の投稿を見る機能。</li>
 <h3>工夫した機能</h3>
 <p>投票結果について男女別、年齢別で表示させることができます。</p>
-<img width="400px" alt="Screen Shot 2023-09-02 at 16 36 17" src="https://github.com/akira-shirakawa/laravel_descussion/assets/64534938/26332660-c453-413d-8ab6-9d5a920062fc">
+
+![df06e-np6k4](https://github.com/akira-shirakawa/laravel_descussion/assets/64534938/31c56ee7-c87f-4b2d-8b52-3ddf0100e6c7)
+
+
 <p>投稿に対してコメントをしたり、非同期でいいねをすることができます。</p>
-<img width="481" alt="Screen Shot 2023-09-02 at 17 48 36" src="https://github.com/akira-shirakawa/laravel_descussion/assets/64534938/bc267d55-0cc4-4c80-b89f-f4427ce89463">
+
+![vtvsn-r9pst](https://github.com/akira-shirakawa/laravel_descussion/assets/64534938/0b0a764d-8e33-43a3-a910-1b2311f962cf)
+
 
 
 <h2>DB構造</h2>
