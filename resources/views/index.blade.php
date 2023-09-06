@@ -66,7 +66,7 @@
                     <a href="{{ route('category', ['id' => 2]) }}">冠婚葬祭</a>
                     <a href="{{ route('category', ['id' => 3]) }}">食事</a>
                     <a href="{{ route('category', ['id' => 4]) }}">乗り物</a>
-                    <a href="{{ route('category', ['id' => 4]) }}">その他</a>
+                    <a href="{{ route('category', ['id' => 5]) }}">その他</a>
             </div>
         </div>
     </div>
