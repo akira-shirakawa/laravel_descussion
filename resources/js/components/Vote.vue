@@ -310,6 +310,16 @@ h3{
 .left,.right{
     width:50%;
 }
+@media screen and (max-width: 768px) {
+    .show {
+        display: block;
+    }
+    .left,.right{
+        width:100%;
+    }
+
+    
+}
 .pie {
 	position: relative;
 	margin-right: auto;
@@ -369,6 +379,17 @@ h3{
 .age .pie{
     width:70px;
     height:70px;
+}
+@media screen and (max-width: 768px) {
+        .sex .pie{
+        width:150px;
+        height:150px;
+    }
+    .age .pie{
+        width:100px;
+        height:100px;
+    }
+    
 }
 .age .pie span{
     font-size:0.8rem;

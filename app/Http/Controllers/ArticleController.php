@@ -90,8 +90,8 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
-    {
-        //
+    {       
+            return view('edit_article', ['article' => $article]);
     }
 
     /**
@@ -103,7 +103,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        
     }
 
     /**

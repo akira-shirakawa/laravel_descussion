@@ -47,14 +47,19 @@
                     <img src="{{asset('category_images/category_'.$article->category.'.png')}}" alt="" width="60px" height="60px">
                 </div>
                 <div class="item_right">
-                <div class="item_title">{{$article->title}}</div>
-                <div class="item_bottom">{{$article->created_at->diffForHumans()}} &emsp;<i class="fa-regular fa-comment"></i>{{$article->comments()->count()}} &emsp;投票数:{{$article->votes()->count()}}&emsp;
-                <form action="{{route('articles.destroy',['article'=>$article])}}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit" class="btn btn-danger">削除</button>
-                </div>
-                </div>
+                    <div class="item_title">{{$article->title}}</div>
+                        <div class="item_bottom">{{$article->created_at->diffForHumans()}} &emsp;<i class="fa-regular fa-comment"></i>{{$article->comments()->count()}} &emsp;投票数:{{$article->votes()->count()}}&emsp;
+                        
+                            <form action="{{route('articles.destroy',['article'=>$article])}}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="button is-small is-danger">削除</button>
+                            </form>
+                            
+                            
+                        </div>
+                    </div>
+                    
             </a>
             @endforeach
         </div>
