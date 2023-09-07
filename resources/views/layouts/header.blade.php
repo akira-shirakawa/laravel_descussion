@@ -10,6 +10,9 @@
             @auth
             <a href="{{route('user',['user'=>auth::user()])}}"><i class="fa-solid fa-user"></i></a>
             @endauth
+            @guest
+            <a href="{{route('login')}}">ログイン</a>
+            @endguest
         </div>
     </div>
 </div>
