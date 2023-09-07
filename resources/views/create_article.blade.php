@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     @include('common.head')
-    <title>Document</title>
+    <title>投稿</title>
 
 </head>
 <body>
